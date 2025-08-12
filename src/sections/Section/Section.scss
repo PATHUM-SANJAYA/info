@@ -310,26 +310,67 @@
     }
 }
 
+// Make all non-top sections compact on mobile
 @media screen and (max-width: 768px) {
     .section-wrapper {
-
         .section,
         .section.section-reverse {
-            padding: 3rem;
+            width: 100%;
+            max-width: 100%;
+            padding: 0.7rem 0.5rem;
+            margin: 0.6rem 0;
             flex-direction: column;
-
             .section-header {
-                padding: 0;
-                padding-bottom: 0.7rem;
+                font-size: 1.05rem;
+                padding: 0 0 0.4rem 0;
+                margin: 0 0 0.5rem 0;
                 border: none;
-                border-bottom: 1px solid var(--text-primary);
                 text-align: center;
                 justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                
+                // Hide desktop-only decorative accents on mobile
+                &::before,
+                &::after {
+                    display: none;
+                }
+                .section-header-icon {
+                    font-size: 1.2rem;
+                    margin: 0 auto;
+                    display: block;
+                    text-align: center;
+                }
             }
-
             .section-content {
-                padding: 0;
+                width: 100%;
+                padding: 0 !important;
                 text-align: center;
+                h3, h4 {
+                    font-size: 0.95rem;
+                    word-break: break-word;
+                    overflow-wrap: anywhere;
+                }
+                p {
+                    font-size: 0.88rem;
+                    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+                    margin-bottom: 0.6rem;
+                    margin-left: 0;
+                    margin-right: 0;
+                    border: none;
+                    border-radius: 8px;
+                    word-break: break-word;
+                    overflow-wrap: anywhere;
+                }
+                svg {
+                    display: inline-block;
+                    margin: 0 auto 0.5rem auto;
+                    vertical-align: middle;
+                    max-width: 100%;
+                    height: auto;
+                }
+                img { max-width: 100%; height: auto; }
             }
         }
     }

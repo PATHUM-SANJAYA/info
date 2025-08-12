@@ -17,3 +17,23 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        h4 {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .programming-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            svg {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-left: 0.25rem;
+            }
+        }
+    }
+}

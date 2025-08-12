@@ -7,7 +7,7 @@ class MenuItem extends React.Component {
     activeTransformStyle = (angle1, angle2, isMobile) => `
         translateY(${!isMobile ? "-50%" : "0"})
         rotate(${angle1}deg)
-        translate(${isMobile ? 7 : 6}rem)
+        translate(${isMobile ? 5.8 : 6}rem)
         rotate(${angle2}deg)
     `;
 
@@ -17,7 +17,7 @@ class MenuItem extends React.Component {
                 tooltip={this.props.tooltip}
                 onClick={this.props.action}
                 tooltipPlacement={this.props.tooltipPlacement}
-                size={3.5}
+                size={this.props.size || 3.5}
                 style={this.props.menuActive ? {
                     transform: this.activeTransformStyle(
                         this.props.rotationAngle,

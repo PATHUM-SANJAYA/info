@@ -56,7 +56,7 @@ const CommonConfig = {
             height: '350px',
             objectFit: 'cover',
             borderRadius: '50%',
-            filter: 'grayscale(100%)', // Always black and white
+            filter: 'none', // Full color - no black and white
             border: '6px solid #ffffff',
             boxShadow: `
                 0 0 0 15px var(--bg-primary),
@@ -96,7 +96,7 @@ const CommonConfig = {
         {
             name: "CV",
             icon: Icons['link'],
-            link: "https://drive.google.com/file/d/1wiJaibcQjZEfwzcAhK2AsQuqzEUvtTJE/view?usp=sharing"
+            link: "https://drive.google.com/file/d/1vJCiwYFjeiKA_QnhlFuklQyyEz5nJtI2/view?usp=drive_link"
         }
     ]
 };
@@ -443,7 +443,7 @@ const CustomSectionsConfig = [
                 </p>
 
                 <h4>{Icons['networksecurity']} Main Skills</h4>
-                <div className="skills-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2rem', justifyContent: 'flex-end' }}>
+                <div className="skills-container" style={{ display: 'flex', flexWrap: 'nowrap', gap: '0.8rem', marginBottom: '1.2rem', justifyContent: 'center', overflowX: 'auto' }}>
                     <div className="skill-item" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '80px' }}>
                         <span title="Networking">{Icons['networking']}</span>
                         <span style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>Networking</span>
@@ -467,7 +467,7 @@ const CustomSectionsConfig = [
                 </div>
 
                 <h4>{Icons['brush']} Design Skills</h4>
-                <div className="skills-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'flex-end' }}>
+                <div className="skills-container" style={{ display: 'flex', flexWrap: 'nowrap', gap: '0.8rem', justifyContent: 'center', overflowX: 'auto' }}>
                     <div className="skill-item" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '80px' }}>
                         <span title="Adobe Photoshop">{Icons['photoshop']}</span>
                         <span style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>Photoshop</span>

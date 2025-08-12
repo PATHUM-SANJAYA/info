@@ -397,17 +397,27 @@
             text-align: center;
             border-bottom: 1px solid var(--text-primary);
             border-right: none;
-            width: 100%;
-            padding: 0;
-            padding-bottom: 2rem;
+            width: auto;
+            max-width: 92vw;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem 1.2rem;
+            // Mobile hero card - transparent background
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            backdrop-filter: none;
 
             h1 {
-                font-size: 3.5rem;
-                margin-bottom: 1rem;
+                font-size: 2.4rem;
+                word-break: break-word;
+                line-height: 1.15;
+                letter-spacing: 0;
             }
 
             p {
                 font-size: 1.4rem;
+                margin-top: 0.75rem;
             }
         }
 
@@ -417,8 +427,8 @@
             justify-content: center;
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 260px !important;
+                height: 260px !important;
             }
         }
 
@@ -426,6 +436,34 @@
             position: relative;
             bottom: 0;
             margin-top: 2rem;
+            text-align: center;
+            
+            // Make social icons smaller and arrange in one row on mobile
+            .circle-button {
+                width: 1.6rem !important;
+                height: 1.6rem !important;
+                margin: 0.15rem !important;
+            }
+            
+            // Force single row layout on mobile
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: center !important;
+            gap: 0.3rem !important;
+        }
+
+        // Lighten background effects and scale moon for mobile
+        .background-container {
+            img {
+                width: 40vh;
+                height: 40vh;
+                right: -30px;
+                opacity: 0.6;
+            }
+            .clouds,
+            .twinkling {
+                opacity: 0.4;
+            }
         }
     }
 }

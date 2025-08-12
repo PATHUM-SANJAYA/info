@@ -33,31 +33,39 @@ const iconStyle = {
     margin: '0 0.3rem'
 };
 
+// Smaller icons on mobile via media queries
+const smallIconStyle = {
+    fontSize: '1.6rem',
+    margin: '0 0.25rem'
+};
+
 /** Default icons */
+const isMobile = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+
 const Icons = {
-    email: <MailIcon style={iconStyle} />,
-    facebook: <SvgIcon component={FacebookIcon} style={iconStyle} />,
-    instagram: <InstagramIcon style={iconStyle} />,
-    twitter: <Twitter style={iconStyle} />,
-    github: <SvgIcon component={GitHubIcon} stroke="currentColor" strokeWidth={2} style={{ ...iconStyle, fill: 'none' }} />,
-    linkedin: <SvgIcon component={LinkedInIcon} style={iconStyle} />,
-    whatsapp: <WhatsAppIcon style={iconStyle} />,
-    projects: <ComputerIcon style={iconStyle} />,
-    about: <InfoIcon style={iconStyle} />,
-    networking: <WifiIcon style={iconStyle} />,
-    cybersecurity: <SecurityIcon style={iconStyle} />,
-    linux: <LaptopIcon style={iconStyle} />,
-    windows: <DesktopWindowsIcon style={iconStyle} />,
-    hardware: <MemoryIcon style={iconStyle} />,
-    photoshop: <ImageIcon style={iconStyle} />,
-    illustrator: <ColorLensIcon style={iconStyle} />,
-    indesign: <BrushIcon style={iconStyle} />,
-    filmora: <VideoLibraryIcon style={iconStyle} />,
-    helpoutline: <HelpOutlineIcon style={iconStyle} />,
-    map: <MapIcon style={iconStyle} />,
-    code: <CodeIcon style={iconStyle} />,
-    link: <LinkIcon style={iconStyle} />,
-    web: <WebIcon style={iconStyle} />
+    email: <MailIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    facebook: <SvgIcon component={FacebookIcon} style={isMobile ? smallIconStyle : iconStyle} />,
+    instagram: <InstagramIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    twitter: <Twitter style={isMobile ? smallIconStyle : iconStyle} />,
+    github: <SvgIcon component={GitHubIcon} stroke="currentColor" strokeWidth={2} style={{ ...(isMobile ? smallIconStyle : iconStyle), fill: 'none' }} />,
+    linkedin: <SvgIcon component={LinkedInIcon} style={isMobile ? smallIconStyle : iconStyle} />,
+    whatsapp: <WhatsAppIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    projects: <ComputerIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    about: <InfoIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    networking: <WifiIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    cybersecurity: <SecurityIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    linux: <LaptopIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    windows: <DesktopWindowsIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    hardware: <MemoryIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    photoshop: <ImageIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    illustrator: <ColorLensIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    indesign: <BrushIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    filmora: <VideoLibraryIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    helpoutline: <HelpOutlineIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    map: <MapIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    code: <CodeIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    link: <LinkIcon style={isMobile ? smallIconStyle : iconStyle} />,
+    web: <WebIcon style={isMobile ? smallIconStyle : iconStyle} />
 };
 
 export { Icons };

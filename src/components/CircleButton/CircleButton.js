@@ -10,6 +10,7 @@ class CircleButton extends React.Component {
                 placement={this.props.tooltipPlacement}>
                 <ButtonTag href={this.props.link}
                     target={this.props.target}
+                    rel={this.props.target === '_blank' ? 'noopener noreferrer' : undefined}
                     onClick={this.props.onClick}
                     className={!this.props.className ? 'circle-button' : ('circle-button ' + this.props.className)}
                     style={

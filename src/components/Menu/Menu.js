@@ -89,8 +89,9 @@ class Menu extends React.Component {
 
     render() {
         const isMobile = window.matchMedia('(max-width: 768px)').matches ? true : false;
-        const startAngle = isMobile ? 0 : -90;
-        const rotationAngle = isMobile ? 90 : 180;
+        // Widen the arc and shift start slightly on mobile for better spacing
+        const startAngle = isMobile ? -20 : -90;
+        const rotationAngle = isMobile ? 140 : 180;
         console.log(isMobile);
 
         return (
@@ -116,6 +117,7 @@ class Menu extends React.Component {
                             <MenuItem {...menuItem} tooltipPlacement="right"
                                 menuActive={this.state.menuActive}
                                 isMobile={isMobile}
+                                size={isMobile ? 3.4 : 3.5}
                                 rotationAngle={angle} />
                         );
                     })}
