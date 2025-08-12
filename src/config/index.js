@@ -24,13 +24,10 @@ import React from 'react';
 import { Icons } from './icons';
 
 // CUSTOM ICONS
-import SettingsInputAntennaIcon from '@material-ui/icons/SettingsInputAntenna';
-import WbIridescentIcon from '@material-ui/icons/WbIridescent';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ComputerIcon from '@material-ui/icons/Computer';
 import InfoIcon from '@material-ui/icons/Info';
 import RateReviewIcon from '@material-ui/icons/RateReview';
-import Description from '@material-ui/icons/Description';
 import SchoolIcon from '@material-ui/icons/School';
 
 // CUSTOM COMPONENTS

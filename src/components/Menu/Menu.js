@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import MenuToggle from './MenuToggle/MenuToggle';
 import MenuItem from './MenuItem/MenuItem';
 import NightsStayIcon from '@material-ui/icons/NightsStay';
-import ComputerIcon from '@material-ui/icons/Computer';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import './Menu.scss';
 

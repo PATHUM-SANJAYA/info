@@ -15,7 +15,6 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import WifiIcon from '@material-ui/icons/Wifi';
 import SecurityIcon from '@material-ui/icons/Security';
-import RouterIcon from '@material-ui/icons/Router';
 import MemoryIcon from '@material-ui/icons/Memory';
 import DesktopWindowsIcon from '@material-ui/icons/DesktopWindows';
 import LaptopIcon from '@material-ui/icons/Laptop';
