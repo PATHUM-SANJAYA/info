@@ -5,6 +5,12 @@ import './TopSection.scss';
 import { CommonConfig } from '../../config';
 
 class TopSection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isMobile: false
+        };
+    }
 
     componentDidMount() {
         if (this.pathElement && CommonConfig.signature?.viewBox) {
@@ -15,13 +21,38 @@ class TopSection extends React.Component {
             const viewBoxCoords = CommonConfig.signature.viewBox.split(' ').map(val => parseInt(val));
             this.pathElement.setAttribute('stroke-width', Math.max(...viewBoxCoords) / 100);
         }
+
+        // Check if mobile
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.checkMobile);
+    }
+
+    checkMobile = () => {
+        const isMobileView = window.innerWidth <= 767;
+        this.setState({ isMobile: isMobileView });
+        console.log('Mobile detected:', isMobileView); // Debug log
     }
 
     render() {
+        const { isMobile } = this.state;
+        
         return (
             <div className="top-section">
                 <div className="intro">
-                    <h1 data-text={CommonConfig.name}>{CommonConfig.name}</h1>
+                    <h1 data-text={CommonConfig.name}>
+                        {isMobile ? (
+                            <>
+                                <div className="mobile-name-first" key="mobile-pathum">Pathum</div>
+                                <div className="mobile-name-second" key="mobile-sanjaya">Sanjaya</div>
+                            </>
+                        ) : (
+                            CommonConfig.name
+                        )}
+                    </h1>
                 </div>
                 <div className="signature">
                     {CommonConfig.signature?.isImage ? (

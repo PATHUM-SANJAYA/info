@@ -91,7 +91,6 @@ class Menu extends React.Component {
         // Widen the arc and shift start slightly on mobile for better spacing
         const startAngle = isMobile ? -20 : -90;
         const rotationAngle = isMobile ? 140 : 180;
-        console.log(isMobile);
 
         return (
             // The "menu-active" class is also used by MenuToggle and MenuItem(s)

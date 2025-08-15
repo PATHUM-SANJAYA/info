@@ -165,25 +165,8 @@ input, textarea, button {
     margin: 0 auto;
 }
 
-// Mobile layout refinements
-@media (max-width: 768px) {
-    html, body {
-        font-size: 14px;
-    }
-    .body-wrapper {
-        max-width: 100%;
-        padding: 0 1rem;
-    }
-
-    // Center all h2 headings on mobile without affecting desktop
-    h2 {
-        text-align: center;
-    }
-    // Ensure section headers (flex) center their content on mobile
-    .section-header {
-        justify-content: center;
-    }
-}
+// Mobile layout refinements - now handled by mobile-optimizations.scss
+// The responsive system automatically handles these adjustments
 
 a {
     color: var(--accent-primary);

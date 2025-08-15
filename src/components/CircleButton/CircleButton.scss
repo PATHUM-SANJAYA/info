@@ -26,9 +26,5 @@
     }
 }
 
-@media (max-width: 768px) {
-  .circle-button {
-    margin: 0.35rem;
-    padding: 0.4rem;
-  }
-}
+// Responsive breakpoints are now handled by mobile-optimizations.scss
+// This ensures consistent responsive behavior across all components

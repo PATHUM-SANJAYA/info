@@ -1,0 +1,648 @@
+/* =============================================================================
+   RESPONSIVE OVERRIDES CSS - MOBILE ONLY
+   This file provides additional responsive styles that work alongside the SCSS
+   Only affects mobile devices - desktop remains completely unchanged
+   ============================================================================= */
+
+/* =============================================================================
+   MOBILE-ONLY STYLES (BELOW 768px)
+   ============================================================================= */
+
+@media (max-width: 767px) {
+  
+  /* Base responsive container */
+  .body-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* =============================================================================
+     MOBILE TYPOGRAPHY
+     ============================================================================= */
+  
+  /* Mobile-first typography */
+  html {
+    font-size: 14px !important;
+  }
+  
+     /* Responsive headings */
+   h1 {
+     font-size: 2.5rem !important;
+     line-height: 1.1 !important;
+     word-break: break-word !important;
+   }
+   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* Mobile name display - 2 rows */
+                                                                                                                                                                                 .top-section .intro h1 {
+                 display: flex !important;
+                 flex-direction: column !important;
+                 align-items: center !important;
+                 justify-content: center !important;
+                 text-align: center !important;
+                 line-height: 1.2 !important;
+                 position: relative !important;
+                 min-height: 6rem !important;
+                 overflow: hidden !important;
+                 
+                 /* Reset all SCSS effects on mobile */
+                 background: none !important;
+                 background-size: auto !important;
+                 -webkit-background-clip: unset !important;
+                 background-clip: unset !important;
+                 color: transparent !important;
+                 animation: none !important;
+                 text-shadow: none !important;
+                 perspective: none !important;
+                 
+                 /* Remove data-text attribute effects */
+                 &[data-text]::before,
+                 &[data-text]::after {
+                   display: none !important;
+                   content: none !important;
+                 }
+               }
+              
+              /* Mobile name display using React components */
+              .top-section .intro h1 .mobile-name-first {
+                font-size: 2.5rem !important;
+                color: #ffffff !important;
+                font-weight: bold !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.5rem !important;
+                text-transform: uppercase !important;
+              }
+              
+              .top-section .intro h1 .mobile-name-second {
+                font-size: 2.5rem !important;
+                color: #00bfff !important;
+                font-weight: bold !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+                text-transform: uppercase !important;
+              }
+              
+                                                           /* Hide any remaining original text on mobile */
+                .top-section .intro h1 .text-wrapper,
+                .top-section .intro h1 .char,
+                .top-section .intro h1 .space {
+                  display: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  position: absolute !important;
+                  left: -9999px !important;
+                  top: -9999px !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  clip: rect(0, 0, 0, 0) !important;
+                  font-size: 0 !important;
+                  color: transparent !important;
+                  background: transparent !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  line-height: 0 !important;
+                  transform: scale(0) !important;
+                  pointer-events: none !important;
+                }
+                
+                /* Disable SCSS pseudo-elements that create duplicate text */
+                .top-section .intro h1::before,
+                .top-section .intro h1::after {
+                  display: none !important;
+                  content: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  position: absolute !important;
+                  left: -9999px !important;
+                  top: -9999px !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  clip: rect(0, 0, 0, 0) !important;
+                  font-size: 0 !important;
+                  color: transparent !important;
+                  background: transparent !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  line-height: 0 !important;
+                  transform: scale(0) !important;
+                  pointer-events: none !important;
+                }
+  
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* =============================================================================
+     MOBILE LAYOUT
+     ============================================================================= */
+  
+  /* Top section responsive layout */
+  .top-section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2rem 1rem !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Intro section responsive */
+  .top-section .intro {
+    text-align: center !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    border-right: none !important;
+    border-bottom: 2px solid var(--accent-primary) !important;
+    max-width: 100% !important;
+  }
+  
+  /* Signature section responsive */
+  .top-section .signature {
+    width: 100% !important;
+    padding: 1rem !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+           /* Profile image responsive */
+    .profile-image-container .profile-image {
+      width: 250px !important;
+      height: 250px !important;
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  
+  /* Social section responsive */
+  .top-section .social {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 2rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0.3rem !important;
+  }
+  
+  /* Social buttons responsive */
+  .circle-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin: 0.2rem !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+  }
+  
+  /* =============================================================================
+     MOBILE SECTIONS
+     ============================================================================= */
+  
+  /* Section responsive layout */
+  .section {
+    padding: 2rem 1rem !important;
+    margin: 1.5rem 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+     /* Section header responsive */
+   .section-header {
+     font-size: 1.5rem !important;
+     padding: 0 0 1rem 0 !important;
+     margin: 0 0 1rem 0 !important;
+     border: none !important;
+     text-align: center !important;
+     justify-content: center !important;
+     align-items: center !important;
+     width: 100% !important;
+     display: flex !important;
+     flex-direction: column !important;
+   }
+   
+   /* Ensure all section titles are centered on mobile */
+   .section-header h2,
+   .section-header h3,
+   .section-header .section-title {
+     text-align: center !important;
+     width: 100% !important;
+     margin: 0 auto !important;
+     display: block !important;
+   }
+  
+  /* Section content responsive */
+  .section-content {
+    padding: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  /* =============================================================================
+     MOBILE CARDS AND COMPONENTS
+     ============================================================================= */
+  
+  /* Education and experience containers */
+  .education-container,
+  .experience-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  /* Education and experience items */
+  .education-item,
+  .experience-item {
+    padding-left: 0 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* Timeline elements - hide on mobile */
+  .education-container > div:first-child,
+  .experience-container > div:first-child,
+  .education-item > div:first-child,
+  .experience-item > div:first-child {
+    display: none !important;
+  }
+  
+  /* Education and experience cards */
+  .education-card,
+  .experience-card {
+    padding: 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.2) !important;
+    width: 100% !important;
+  }
+  
+  /* Skills container responsive */
+  .skills-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+  }
+  
+  /* Skill items responsive */
+  .skill-item {
+    min-width: auto !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .skill-item svg {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 0 !important;
+  }
+  
+  .skill-item span {
+    font-size: 0.8rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  /* =============================================================================
+     MOBILE NAVIGATION
+     ============================================================================= */
+  
+  /* Menu responsive positioning */
+  .menu {
+    position: relative !important;
+  }
+  
+                                               /* Menu toggle responsive - Mobile Friendly */
+      .menu-toggle {
+        position: fixed !important;
+        top: 2rem !important; /* Better position from top */
+        right: 1rem !important; /* Move to right side for easier thumb access */
+        z-index: 1000 !important;
+        background: rgba(0, 0, 0, 0.8) !important; /* Semi-transparent background */
+        border: 2px solid var(--accent-primary) !important;
+        border-radius: 50% !important; /* Perfect circle */
+        box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4) !important; /* Glowing effect */
+        min-height: 60px !important; /* Larger touch target */
+        min-width: 60px !important; /* Larger touch target */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        backdrop-filter: blur(10px) !important; /* Modern glass effect */
+        transition: all 0.3s ease !important; /* Smooth animations */
+      }
+      
+      /* Hover and active states for better UX */
+      .menu-toggle:hover,
+      .menu-toggle:active {
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 25px rgba(0, 123, 255, 0.6) !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+      }
+  
+  /* Menu items responsive */
+  .menu-item {
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 999 !important;
+    background: var(--bg-primary) !important;
+    border: 2px solid var(--accent-primary) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  /* =============================================================================
+     MOBILE IMAGES AND BUTTONS
+     ============================================================================= */
+  
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  
+  /* Ensure touch-friendly button sizes */
+  button,
+  .btn,
+  .circle-button,
+  .menu-toggle,
+  .menu-item {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  
+  @media (pointer: coarse) {
+    button,
+    .btn,
+    .circle-button,
+    .menu-toggle,
+    .menu-item {
+      min-height: 48px !important;
+      min-width: 48px !important;
+    }
+  }
+  
+  /* =============================================================================
+     MOBILE GRID AND FLEXBOX
+     ============================================================================= */
+  
+  /* Mobile-first grid system */
+  .grid-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Responsive flex containers */
+  .flex-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+     /* =============================================================================
+      MOBILE UTILITY CLASSES
+      ============================================================================= */
+   
+   /* Text alignment utilities */
+   .text-center-xs {
+     text-align: center !important;
+   }
+   
+       /* Force center all section titles on mobile */
+    .section h2,
+    .section h3,
+    .section .section-title,
+    .section .section-header h2,
+    .section .section-header h3 {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      display: block !important;
+    }
+    
+    /* Specifically target the main section headers (Experience, Projects, Education, About, Reviews) */
+    .section-wrapper .section .section-header {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Center the section header text */
+    .section-wrapper .section .section-header {
+      text-align: center !important;
+    }
+    
+    /* Center the section header icon and text container */
+    .section-header {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+  
+     /* =============================================================================
+      MOBILE PERFORMANCE OPTIMIZATIONS
+      ============================================================================= */
+   
+   /* Reduce motion for accessibility and performance */
+   * {
+     animation-duration: 0.5s !important;
+     transition-duration: 0.3s !important;
+   }
+   
+                                                               /* Moderately slow circular animations for mobile */
+       .section-header svg {
+         animation-duration: 25s !important; /* Moderately slow icon rotation */
+       }
+       
+       /* Moderately slow gradient and outline rotations */
+       .section-header::before {
+         animation-duration: 25s !important; /* Moderately slow gradient rotation */
+       }
+       
+       .section-header::after {
+         animation-duration: 25s !important; /* Moderately slow outline rotation */
+       }
+       
+       /* Moderately slower profile picture background animations for mobile */
+       .profile-image-container {
+         animation-duration: 12s !important; /* Moderately slower float animation */
+       }
+       
+       .profile-image {
+         animation-duration: 6s !important; /* Moderately slower pulse animation */
+       }
+       
+       .profile-image::before {
+         animation-duration: 4s !important; /* Moderately slower scanlines animation */
+       }
+       
+       .profile-image-ring.outer-ring {
+         animation-duration: 20s !important; /* Moderately slower outer ring rotation */
+       }
+       
+       .profile-image-ring.middle-ring {
+         animation-duration: 18s !important; /* Moderately slower middle ring rotation */
+       }
+       
+       .profile-image-ring.inner-ring {
+         animation-duration: 15s !important; /* Moderately slower inner ring rotation */
+       }
+  
+  /* Disable complex animations on mobile */
+  .particle,
+  .background-container,
+  .stars,
+  .twinkling,
+  .clouds {
+    display: none !important;
+  }
+  
+  /* Simplify background effects */
+  body::before {
+    background-size: 50px 50px !important;
+    opacity: 0.2 !important;
+  }
+  
+  body::after {
+    background: radial-gradient(circle at 50% 50%, rgba(var(--accent-primary-rgb), 0.02) 0%, transparent 70%) !important;
+    animation: none !important;
+  }
+  
+  /* Reduce complex animations */
+  .section::before,
+  .section::after {
+    display: none !important;
+  }
+  
+  .top-section::after {
+    display: none !important;
+  }
+  
+  /* =============================================================================
+     MOBILE ACCESSIBILITY
+     ============================================================================= */
+  
+  /* Ensure proper focus states */
+  button:focus,
+  .btn:focus,
+  .circle-button:focus,
+  .menu-toggle:focus,
+  .menu-item:focus {
+    outline: 2px solid var(--accent-primary) !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* =============================================================================
+     MOBILE HORIZONTAL SCROLLING PREVENTION
+     ============================================================================= */
+  
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure containers don't overflow */
+  * {
+    box-sizing: border-box !important;
+  }
+  
+  /* =============================================================================
+     MOBILE BROWSER SPECIFIC FIXES
+     ============================================================================= */
+  
+  /* iOS Safari viewport fixes */
+  @supports (-webkit-touch-callout: none) {
+    .top-section {
+      min-height: -webkit-fill-available !important;
+    }
+    
+    body {
+      min-height: -webkit-fill-available !important;
+    }
+  }
+  
+  /* Android Chrome viewport fixes */
+  @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
+    .top-section {
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
+    }
+    
+    body {
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
+    }
+  }
+}
+
+/* =============================================================================
+   DESKTOP STYLES - COMPLETELY UNCHANGED
+   Above 768px, all original desktop styles are preserved exactly as they were
+   ============================================================================= */
+
+/* =============================================================================
+   PRINT STYLES
+   ============================================================================= */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .menu,
+  .menu-toggle,
+  .menu-item,
+  .particle,
+  .background-container {
+    display: none !important;
+  }
+}

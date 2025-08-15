@@ -17,12 +17,5 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .menu-item {
-        left: 0.9rem;
-        top: 0.9rem;
-        transform: translateY(0);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-        border-width: 0.18rem;
-    }
-}
+// Responsive breakpoints are now handled by mobile-optimizations.scss
+// This ensures consistent responsive behavior across all components
