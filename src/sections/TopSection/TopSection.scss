@@ -451,12 +451,12 @@
 @keyframes pulse {
     0%, 100% {
         box-shadow: 0 0 0 15px var(--bg-primary),
-                   0 0 0 20px #ffffff,
+                   0 0 0 20px var(--bg-secondary),
                    0 0 35px rgba(0,0,0,0.2);
     }
     50% {
         box-shadow: 0 0 0 15px var(--bg-primary),
-                   0 0 0 20px #ffffff,
+                   0 0 0 20px var(--bg-secondary),
                    0 0 50px rgba(77, 159, 255, 0.4);
     }
 }

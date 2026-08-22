@@ -6,7 +6,11 @@
     height: 100%;
     z-index: -3;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.85;
+
+    body:not(.dark-mode) & {
+        opacity: 0.95;
+    }
 
     // Hide on mobile for performance
     @media (max-width: 1023px) {

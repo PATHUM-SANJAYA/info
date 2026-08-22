@@ -81,12 +81,12 @@ class TopSection extends React.Component {
                     </h1>
                     <div className="professional-title" style={{ 
                         fontSize: '1.2rem', 
-                        color: '#ffffff', 
+                        color: 'var(--text-primary)', 
                         marginTop: '0.8rem', 
                         textAlign: 'center', 
                         fontWeight: '600',
                         letterSpacing: '0.8px',
-                        textShadow: '0 0 10px rgba(255, 255, 255, 0.4)'
+                        textShadow: '0 0 10px rgba(var(--accent-primary-rgb), 0.2)'
                     }}>
                         Junior Cybersecurity and Network Support Professional
                     </div>

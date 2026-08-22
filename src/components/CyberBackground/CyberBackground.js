@@ -45,20 +45,23 @@ class CyberBackground extends React.Component {
         }
 
         const animate = () => {
-            // Semi-transparent overlay for trail effect
-            ctx.fillStyle = 'rgba(10, 10, 10, 0.08)';
+            const isDark = document.body.classList.contains('dark-mode');
+
+            // Dynamic overlay matching current theme background
+            ctx.fillStyle = isDark ? 'rgba(10, 10, 10, 0.08)' : 'rgba(248, 249, 250, 0.12)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            const rgb = isDark ? '0, 238, 255' : '9, 132, 227';
+
             // Draw binary rain
-            ctx.font = `${fontSize}px monospace`;
+            ctx.font = isDark ? `${fontSize}px monospace` : `600 ${fontSize}px monospace`;
             for (let i = 0; i < drops.length; i++) {
                 const char = chars[Math.floor(Math.random() * chars.length)];
                 const x = i * fontSize;
                 const y = drops[i] * fontSize;
 
-                // Cyan-green gradient for characters
-                const alpha = 0.08 + Math.random() * 0.06;
-                ctx.fillStyle = `rgba(0, 238, 255, ${alpha})`;
+                const alpha = isDark ? (0.08 + Math.random() * 0.06) : (0.28 + Math.random() * 0.15);
+                ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
                 ctx.fillText(char, x, y);
 
                 // Reset drop
@@ -87,9 +90,9 @@ class CyberBackground extends React.Component {
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
                     if (dist < 200) {
-                        const alpha = (1 - dist / 200) * 0.12;
-                        ctx.strokeStyle = `rgba(0, 238, 255, ${alpha})`;
-                        ctx.lineWidth = 0.5;
+                        const alpha = (1 - dist / 200) * (isDark ? 0.12 : 0.35);
+                        ctx.strokeStyle = `rgba(${rgb}, ${alpha})`;
+                        ctx.lineWidth = isDark ? 0.5 : 0.8;
                         ctx.beginPath();
                         ctx.moveTo(node.x, node.y);
                         ctx.lineTo(other.x, other.y);
@@ -101,13 +104,13 @@ class CyberBackground extends React.Component {
                 const pulseRadius = node.radius + Math.sin(node.pulse) * 1;
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, pulseRadius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 238, 255, ${0.3 + Math.sin(node.pulse) * 0.15})`;
+                ctx.fillStyle = `rgba(${rgb}, ${isDark ? (0.3 + Math.sin(node.pulse) * 0.15) : (0.7 + Math.sin(node.pulse) * 0.2)})`;
                 ctx.fill();
 
                 // Glow
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, pulseRadius + 4, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 238, 255, ${0.05 + Math.sin(node.pulse) * 0.03})`;
+                ctx.fillStyle = `rgba(${rgb}, ${isDark ? (0.05 + Math.sin(node.pulse) * 0.03) : (0.15 + Math.sin(node.pulse) * 0.08)})`;
                 ctx.fill();
             }
 
