@@ -1,0 +1,43 @@
+.about-section {
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    .programming-icons {
+
+        svg {
+            margin-left: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// Responsive breakpoints are now handled by mobile-optimizations.scss
+// This ensures consistent responsive behavior across all components
+
+// Ensure skills are centered on desktop - higher specificity rule
+.about-section .skills-container {
+  justify-content: center !important;
+  display: flex !important;
+}
+
+@media screen and (min-width: 768px) {
+  .about-section .skills-container {
+    justify-content: center !important;
+    display: flex !important;
+  }
+  
+  // Allow skill names to wrap to two rows on desktop - target only text spans
+  .about-section .skill-item span:nth-child(2) {
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    max-width: 80px !important;
+  }
+}

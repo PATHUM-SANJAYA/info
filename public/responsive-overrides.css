@@ -1,0 +1,681 @@
+/* =============================================================================
+   RESPONSIVE OVERRIDES CSS - MOBILE ONLY
+   This file provides additional responsive styles that work alongside the SCSS
+   Only affects mobile devices - desktop remains completely unchanged
+   ============================================================================= */
+
+/* =============================================================================
+   MOBILE-ONLY STYLES (BELOW 768px)
+   ============================================================================= */
+
+@media (max-width: 767px) {
+  
+  /* Base responsive container */
+  .body-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* =============================================================================
+     MOBILE TYPOGRAPHY
+     ============================================================================= */
+  
+  /* Mobile-first typography */
+  html {
+    font-size: 14px !important;
+  }
+  
+     /* Responsive headings */
+   h1 {
+     font-size: 2.5rem !important;
+     line-height: 1.1 !important;
+     word-break: break-word !important;
+   }
+   
+  /* Mobile name display — stacked lines, reset desktop gradient/glitch */
+  .top-section .intro h1 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    position: relative !important;
+    min-height: auto !important;
+    overflow: visible !important;
+
+    background: none !important;
+    background-size: auto !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: transparent !important;
+    animation: none !important;
+    text-shadow: none !important;
+    perspective: none !important;
+  }
+
+  .top-section .intro h1[data-text]::before,
+  .top-section .intro h1[data-text]::after {
+    display: none !important;
+    content: none !important;
+  }
+              
+              /* Mobile name display using React components */
+              .top-section .intro h1 .mobile-name-first {
+                display: block !important;
+                font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+                color: var(--text-primary) !important;
+                font-weight: bold !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.5rem !important;
+                text-transform: uppercase !important;
+              }
+
+              .top-section .intro h1 .mobile-name-second {
+                display: block !important;
+                font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+                color: var(--accent-primary) !important;
+                font-weight: bold !important;
+                text-align: center !important;
+                line-height: 1.2 !important;
+                text-transform: uppercase !important;
+              }
+              
+                                                           /* Hide any remaining original text on mobile */
+                .top-section .intro h1 .text-wrapper,
+                .top-section .intro h1 .char,
+                .top-section .intro h1 .space {
+                  display: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  position: absolute !important;
+                  left: -9999px !important;
+                  top: -9999px !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  clip: rect(0, 0, 0, 0) !important;
+                  font-size: 0 !important;
+                  color: transparent !important;
+                  background: transparent !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  line-height: 0 !important;
+                  transform: scale(0) !important;
+                  pointer-events: none !important;
+                }
+                
+                /* Disable SCSS pseudo-elements that create duplicate text */
+                .top-section .intro h1::before,
+                .top-section .intro h1::after {
+                  display: none !important;
+                  content: none !important;
+                  visibility: hidden !important;
+                  opacity: 0 !important;
+                  position: absolute !important;
+                  left: -9999px !important;
+                  top: -9999px !important;
+                  width: 0 !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  clip: rect(0, 0, 0, 0) !important;
+                  font-size: 0 !important;
+                  color: transparent !important;
+                  background: transparent !important;
+                  border: none !important;
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  line-height: 0 !important;
+                  transform: scale(0) !important;
+                  pointer-events: none !important;
+                }
+  
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* =============================================================================
+     MOBILE LAYOUT
+     ============================================================================= */
+  
+  /* Top section responsive layout */
+  .top-section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 2rem 1rem !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Intro section responsive */
+  .top-section .intro {
+    text-align: center !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    border-right: none !important;
+    border-bottom: 2px solid var(--accent-primary) !important;
+    max-width: 100% !important;
+  }
+  
+  /* Signature section responsive */
+  .top-section .signature {
+    width: 100% !important;
+    padding: 1rem !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Profile image: fluid size, keep circular crop */
+  .profile-image-container .profile-image {
+    width: min(250px, 85vw) !important;
+    height: min(250px, 85vw) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    object-fit: cover !important;
+  }
+  
+  /* Social section responsive */
+  .top-section .social {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 2rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    padding: 0 0.25rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-links {
+    text-align: center !important;
+  }
+  
+  /* Social buttons responsive */
+  .circle-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin: 0.2rem !important;
+    min-height: 40px !important;
+    min-width: 40px !important;
+  }
+  
+  /* =============================================================================
+     MOBILE SECTIONS
+     ============================================================================= */
+  
+  /* Section responsive layout */
+  .section {
+    padding: 2rem 1rem !important;
+    margin: 1.5rem 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+     /* Section header responsive */
+   .section-header {
+     font-size: 1.5rem !important;
+     padding: 0 0 1rem 0 !important;
+     margin: 0 0 1rem 0 !important;
+     border: none !important;
+     text-align: center !important;
+     justify-content: center !important;
+     align-items: center !important;
+     width: 100% !important;
+     display: flex !important;
+     flex-direction: column !important;
+   }
+   
+   /* Ensure all section titles are centered on mobile */
+   .section-header h2,
+   .section-header h3,
+   .section-header .section-title {
+     text-align: center !important;
+     width: 100% !important;
+     margin: 0 auto !important;
+     display: block !important;
+   }
+  
+  /* Section content responsive */
+  .section-content {
+    padding: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  /* =============================================================================
+     MOBILE CARDS AND COMPONENTS
+     ============================================================================= */
+  
+  /* Education and experience containers */
+  .education-container,
+  .experience-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  /* Education and experience items */
+  .education-item,
+  .experience-item {
+    padding-left: 0 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* Timeline elements - hide on mobile */
+  .education-container > div:first-child,
+  .experience-container > div:first-child,
+  .education-item > div:first-child,
+  .experience-item > div:first-child {
+    display: none !important;
+  }
+  
+  /* Education and experience cards */
+  .education-card,
+  .experience-card {
+    padding: 1rem !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.2) !important;
+    width: 100% !important;
+  }
+  
+  /* Skills container responsive */
+  .skills-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+  }
+  
+  /* Skill items responsive */
+  .skill-item {
+    min-width: auto !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .skill-item svg {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 0 !important;
+  }
+  
+  .skill-item span {
+    font-size: 0.8rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  /* =============================================================================
+     MOBILE NAVIGATION
+     ============================================================================= */
+  
+  /* Menu: above hero (.top-section z-index:1) so FAB is clickable */
+  .menu,
+  .menu .menu-data {
+    overflow: visible !important;
+  }
+
+  .menu {
+    position: relative !important;
+    z-index: 10001 !important;
+  }
+
+  /* Inset keeps border + glow inside the viewport (avoids top/right clipping) */
+  .menu .menu-toggle {
+    position: fixed !important;
+    top: max(14px, calc(env(safe-area-inset-top, 0px) + 10px)) !important;
+    right: max(14px, calc(env(safe-area-inset-right, 0px) + 10px)) !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    z-index: 1000 !important;
+    width: min(4rem, calc(100vw - 28px)) !important;
+    height: min(4rem, calc(100vw - 28px)) !important;
+    min-width: 3.25rem !important;
+    min-height: 3.25rem !important;
+    max-width: 4rem !important;
+    max-height: 4rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 50% !important;
+    background: var(--bg-primary) !important;
+    border: 2px solid var(--accent-primary) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+  }
+
+  .menu .menu-toggle:hover,
+  .menu .menu-toggle:active {
+    transform: scale(1.06) !important;
+    background: var(--bg-secondary) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .menu .menu-toggle:hover .menu-burger-bar,
+  .menu .menu-toggle:active .menu-burger-bar {
+    background: var(--accent-primary) !important;
+  }
+
+  .menu.menu-active .menu-toggle .menu-burger-bar {
+    background: var(--text-primary) !important;
+  }
+
+  /* Arc layout: desktop pivot (skip when .menu--mobile uses vertical stack in Menu.scss) */
+  .menu:not(.menu--mobile) .menu-item {
+    top: 50% !important;
+    left: 2rem !important;
+    right: auto !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .menu--mobile .menu-item {
+    left: auto !important;
+    right: max(14px, calc(env(safe-area-inset-right, 0px) + 10px)) !important;
+    /* Align item center with 4rem FAB (items are 3.4rem => +0.3rem offset) */
+    top: calc(max(14px, calc(env(safe-area-inset-top, 0px) + 10px)) + 0.3rem) !important;
+    bottom: auto !important;
+  }
+  
+  /* =============================================================================
+     MOBILE IMAGES AND BUTTONS
+     ============================================================================= */
+  
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  
+  /* Touch-friendly sizes (menu toggle/items use fixed 4rem — excluded to avoid stretching) */
+  button:not(.menu-toggle):not(.menu-item),
+  .btn,
+  .circle-button:not(.menu-toggle):not(.menu-item) {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  @media (pointer: coarse) {
+    button:not(.menu-toggle):not(.menu-item),
+    .btn,
+    .circle-button:not(.menu-toggle):not(.menu-item) {
+      min-height: 48px !important;
+      min-width: 48px !important;
+    }
+  }
+  
+  /* =============================================================================
+     MOBILE GRID AND FLEXBOX
+     ============================================================================= */
+  
+  /* Mobile-first grid system */
+  .grid-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Responsive flex containers */
+  .flex-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+     /* =============================================================================
+      MOBILE UTILITY CLASSES
+      ============================================================================= */
+   
+   /* Text alignment utilities */
+   .text-center-xs {
+     text-align: center !important;
+   }
+   
+       /* Force center all section titles on mobile */
+    .section h2,
+    .section h3,
+    .section .section-title,
+    .section .section-header h2,
+    .section .section-header h3 {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      display: block !important;
+    }
+    
+    /* Specifically target the main section headers (Experience, Projects, Education, About, Reviews) */
+    .section-wrapper .section .section-header {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Center the section header text */
+    .section-wrapper .section .section-header {
+      text-align: center !important;
+    }
+    
+    /* Center the section header icon and text container */
+    .section-header {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+  
+     /* =============================================================================
+      MOBILE PERFORMANCE OPTIMIZATIONS
+      ============================================================================= */
+   
+   /* Reduce motion for accessibility and performance */
+   * {
+     animation-duration: 0.5s !important;
+     transition-duration: 0.3s !important;
+   }
+   
+                                                               /* Moderately slow circular animations for mobile */
+       .section-header svg {
+         animation-duration: 25s !important; /* Moderately slow icon rotation */
+       }
+       
+       /* Moderately slow gradient and outline rotations */
+       .section-header::before {
+         animation-duration: 25s !important; /* Moderately slow gradient rotation */
+       }
+       
+       .section-header::after {
+         animation-duration: 25s !important; /* Moderately slow outline rotation */
+       }
+       
+       /* Moderately slower profile picture background animations for mobile */
+       .profile-image-container {
+         animation-duration: 12s !important; /* Moderately slower float animation */
+       }
+       
+       .profile-image {
+         animation-duration: 6s !important; /* Moderately slower pulse animation */
+       }
+       
+       .profile-image::before {
+         animation-duration: 4s !important; /* Moderately slower scanlines animation */
+       }
+       
+       .profile-image-ring.outer-ring {
+         animation-duration: 20s !important; /* Moderately slower outer ring rotation */
+       }
+       
+       .profile-image-ring.middle-ring {
+         animation-duration: 18s !important; /* Moderately slower middle ring rotation */
+       }
+       
+       .profile-image-ring.inner-ring {
+         animation-duration: 15s !important; /* Moderately slower inner ring rotation */
+       }
+  
+  /* Disable complex animations on mobile */
+  .particle,
+  .background-container,
+  .stars,
+  .twinkling,
+  .clouds {
+    display: none !important;
+  }
+  
+  /* Simplify background effects */
+  body::before {
+    background-size: 50px 50px !important;
+    opacity: 0.2 !important;
+  }
+  
+  body::after {
+    background: radial-gradient(circle at 50% 50%, rgba(var(--accent-primary-rgb), 0.02) 0%, transparent 70%) !important;
+    animation: none !important;
+  }
+  
+  /* Reduce complex animations */
+  .section::before,
+  .section::after {
+    display: none !important;
+  }
+  
+  .top-section::after {
+    display: none !important;
+  }
+  
+  /* =============================================================================
+     MOBILE ACCESSIBILITY
+     ============================================================================= */
+  
+  /* Ensure proper focus states */
+  button:focus,
+  .btn:focus,
+  .circle-button:focus,
+  .menu-toggle:focus,
+  .menu-item:focus {
+    outline: 2px solid var(--accent-primary) !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* =============================================================================
+     MOBILE HORIZONTAL SCROLLING PREVENTION
+     ============================================================================= */
+  
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure containers don't overflow */
+  * {
+    box-sizing: border-box !important;
+  }
+  
+  /* =============================================================================
+     MOBILE BROWSER SPECIFIC FIXES
+     ============================================================================= */
+  
+  /* iOS Safari viewport fixes */
+  @supports (-webkit-touch-callout: none) {
+    .top-section {
+      min-height: -webkit-fill-available !important;
+    }
+    
+    body {
+      min-height: -webkit-fill-available !important;
+    }
+  }
+  
+  /* Android Chrome viewport fixes */
+  @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
+    .top-section {
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
+    }
+    
+    body {
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
+    }
+  }
+}
+
+/* =============================================================================
+   DESKTOP STYLES - COMPLETELY UNCHANGED
+   Above 768px, all original desktop styles are preserved exactly as they were
+   ============================================================================= */
+
+/* =============================================================================
+   PRINT STYLES
+   ============================================================================= */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .menu,
+  .menu-toggle,
+  .menu-item,
+  .particle,
+  .background-container {
+    display: none !important;
+  }
+}
